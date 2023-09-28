@@ -13,7 +13,6 @@ public interface UserService {
   public RegisterResponseDto register(RegisterDto registerDto) throws UserAlreadyExistException;
   public LoginResponseDto login(LoginDto loginDto) throws UserNotExistException;
   public String verifyEmail(String email,String token) throws UserNotExistException,TokenExpiredException;
-  public String sendToken(String email) throws UserNotExistException;
   public RegisterResponseDto update(RegisterDto registerDto)throws UserNotExistException;
   public String forgotPassword(String email) throws UserNotExistException;
   public String resetPassword(String password,String email,String otp)throws UserNotExistException;

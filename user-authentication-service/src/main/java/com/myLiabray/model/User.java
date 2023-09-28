@@ -53,4 +53,10 @@ public class User {
 	    return minutesDifference >= 10;
 	}
 
+	public boolean getEnable() {
+		// TODO Auto-generated method stub
+		return this.enable;
+	}
+
+
 }
