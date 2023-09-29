@@ -15,5 +15,5 @@ public interface UserService {
   public String verifyEmail(String email,String token) throws UserNotExistException,TokenExpiredException;
   public RegisterResponseDto update(RegisterDto registerDto)throws UserNotExistException;
   public String forgotPassword(String email) throws UserNotExistException;
-  public String resetPassword(String password,String email,String otp)throws UserNotExistException;
+  public String resetPassword(String password,String email,String otp)throws UserNotExistException,TokenExpiredException;
 }

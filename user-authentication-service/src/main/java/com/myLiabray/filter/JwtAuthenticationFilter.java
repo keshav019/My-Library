@@ -23,6 +23,7 @@ import io.micrometer.core.instrument.util.StringUtils;
 
 
 
+
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
@@ -37,8 +38,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 		final String authHeader = request.getHeader("Authorization");
 		final String jwt;
         final String email;
+        
         if (StringUtils.isEmpty(authHeader) || !startsWith(authHeader, "Bearer ")) {
             filterChain.doFilter(request, response);
+            
             return;
         }
         jwt = authHeader.substring(7);

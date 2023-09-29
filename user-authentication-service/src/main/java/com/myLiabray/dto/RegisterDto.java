@@ -1,5 +1,6 @@
 package com.myLiabray.dto;
 
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -22,7 +23,6 @@ public class RegisterDto {
     @NotBlank(message = "First name is required")
     private String firstname;
 
-    @NotBlank(message = "Last name is required")
     private String lastname;
 
     @NotBlank(message = "Password is required")

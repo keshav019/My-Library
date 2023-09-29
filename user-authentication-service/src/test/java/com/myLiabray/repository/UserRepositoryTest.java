@@ -14,10 +14,9 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class UserRepositoryTest {
+class UserRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;
@@ -26,7 +25,7 @@ public class UserRepositoryTest {
     private TestEntityManager entityManager;
 
     @Test
-    public void testCreateUser() {
+    void testCreateUser() {
         User user = new User();
         user.setEmail("test@example.com");
         user.setFirstname("John");
@@ -40,7 +39,7 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void testReadUser() {
+    void testReadUser() {
         User user = new User();
         user.setEmail("test@example.com");
         user.setFirstname("John");
@@ -60,7 +59,7 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void testUpdateUser() {
+    void testUpdateUser() {
         User user = new User();
         user.setEmail("test@example.com");
         user.setFirstname("John");
@@ -79,7 +78,7 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void testDeleteUser() {
+    void testDeleteUser() {
         User user = new User();
         user.setEmail("test@example.com");
         user.setFirstname("John");

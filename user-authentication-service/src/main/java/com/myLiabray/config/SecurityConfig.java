@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.myLiabray.exception.AuthenticationFailureHandlerImpl;
 import com.myLiabray.filter.JwtAuthenticationFilter;
 import com.myLiabray.service.UserDetailsServiceImpl;
 
@@ -26,7 +27,8 @@ public class SecurityConfig {
 	public UserDetailsServiceImpl userDetailsService;
 	@Autowired
 	public JwtAuthenticationFilter jwtAuthenticationFilter;
-
+	@Autowired
+	private AuthenticationFailureHandlerImpl authenticationFailureHandlerImpl;
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf(AbstractHttpConfigurer::disable)

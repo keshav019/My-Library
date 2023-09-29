@@ -1,7 +1,6 @@
 package com.myLiabray.dto;
 
 
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -16,14 +15,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginDto {
-
-	@NotBlank(message = "Email is required")
+public class ResetPasswordDto {
+	@NotBlank(message = "Invalid email")
 	@Email(message = "Invalid email")
 	private String email;
 
 	@NotBlank(message = "Password is required")
-	@Size(min = 8, message = "Invalid Password")
-	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).*$", message = "Invalid Password")
+	@Size(min = 8, message = "Password must be at least 8 characters long")
+	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).*$", message = "Password must start with a letter, contain at least one capital letter, one special character, and one digit")
 	private String password;
+	private String otp;
 }
